@@ -54,9 +54,8 @@ html {
     justify-content: space-between;
 }
 
-.priceTag {
-    color: gray;
-    font-size: 1rem;
+.sidebarDiv {
+    padding: 3px 50px 5px 20px;
 }
 
 .itemPrice {
@@ -85,10 +84,15 @@ html {
 
 .normalDiv>h1 {
     margin: 20px 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 5%;
+    font-size: 1.3rem;
 }
 
+.sidebarBorder {
+    border-left: none;
+    border: solid 1.6px var(--light_grey);
+}
 
 button {
     background-color: var(--dark_green);
