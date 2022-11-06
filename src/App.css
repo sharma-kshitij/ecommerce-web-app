@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 :root {
-    --main_font: font-family: 'Comfortaa', cursive;
+    --main_font:'Comfortaa', cursive;
     --dark_green: #47a358;
+    --light_grey: lightgrey;
 }
 
 html {
@@ -33,8 +34,7 @@ html {
 }
 
 h1 {
-    font-family: 'Comfortaa';
-    font-size: 19px;
+    font-size: 1.2rem;
 }
 
 .normalDiv {
@@ -47,7 +47,27 @@ h1 {
     padding: 5%;
 }
 
+.normalBorder {
+    border-color: var(--light_grey);
+    border-width: 1.6px;
+}
 
+button {
+    background-color: var(--dark_green) ;
+    font-family: var(--main_font);
+    font-size: 1rem;
+    color: white;
+    padding: 15px 10px;
+    width: 70%;
+    border: none;
+    border-radius: 15px;
+}
+ 
+button:hover {
+    opacity: 75%;
+    cursor: pointer;
+    /* box-shadow: 2px 3px 30px 1px #bdcabf; */
+}
 
 
 
@@ -62,7 +82,7 @@ h1 {
     padding-top: 3px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: var(--main_font);
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -83,7 +103,7 @@ h1 {
 .checkmark {
     position: absolute;
     border-radius: 20%;
-    border: rgb(189, 189, 189, 50%) 1.6px solid;
+    border: lightgray 1.6px solid;
     top: 0;
     left: 0;
     height: 20px;
@@ -99,6 +119,7 @@ h1 {
 /* When the checkbox is checked, add a background */
 .container input:checked~.checkmark {
     background-color: var(--dark_green);
+    border:var(--dark_green) 1.6px solid;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
