@@ -7,7 +7,7 @@ export default function CheckBox({category}) {
   const [isChecked, setisChecked] = useState(false)
 
   return (
-    <div className="normalDiv">
+    <div className="sidebarDiv">
       <label className="container" >Gardening 
         <input type="checkbox" onClick={() => { setisChecked(!isChecked) }} checked={isChecked} />
           <span className="checkmark"></span>

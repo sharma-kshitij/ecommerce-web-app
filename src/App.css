@@ -37,19 +37,19 @@ h1 {
     font-size: 1.2rem;
 }
 
-.normalDiv {
-    margin: 15px 20px;
+.sidebarDiv {
+    padding: 3px 20px;
 }
 
-.normalDiv>h1 {
+.sidebarDiv>h1 {
     margin: 20px 10px;
     margin-top: 10px;
     padding: 5%;
 }
 
-.normalBorder {
-    border-color: var(--light_grey);
-    border-width: 1.6px;
+.sidebarBorder {
+    border-left: none;
+    border: solid 1.6px var(--light_grey);
 }
 
 button {
