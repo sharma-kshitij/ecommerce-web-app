@@ -64,9 +64,23 @@ html {
     margin: 20px;
 }
 
+.cardButton {
+    margin: 15px 15px;
+    padding: 0 20px;
+    background: none;
+    color: black;
+    border: 1px var(--light_grey) solid;
+}
+
+.cardButton:hover {
+    background-color: var(--dark_green);
+    color: white;
+    opacity: 100%;
+}
+
 
 .normalDiv {
-    margin: 15px 20px;
+    padding: 15px 20px;
 }
 
 .normalDiv>h1 {
@@ -75,10 +89,6 @@ html {
     padding: 5%;
 }
 
-.normalBorder {
-    border-color: var(--light_grey);
-    border-width: 1.6px;
-}
 
 button {
     background-color: var(--dark_green);

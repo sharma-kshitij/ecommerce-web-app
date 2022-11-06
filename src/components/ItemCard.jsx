@@ -1,8 +1,12 @@
+import { AiOutlineHeart } from 'react-icons/ai'
 import Rating from 'react-star-rating-lite'
 
 const ItemCard = ({ name, price, desc, category, image, rating, rate_count }) => {
     return (
         <div className='itemCard'>
+
+            {/* <span><AiOutlineHeart color='red' size='2rem' /></span> */}
+
             <img src={image} alt="" />
             <p className='itemName' >{name}</p>
             <div className='cardRating'>
