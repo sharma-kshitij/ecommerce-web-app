@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 :root {
-    --main_font:'Comfortaa', cursive;
+    --main_font: 'Comfortaa', cursive;
     --dark_green: #47a358;
     --light_grey: lightgrey;
 }
@@ -18,33 +18,51 @@ html {
 .itemCard {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 2rem;
-    pad: 2rem;
+    padding: 2rem;
     max-width: 20rem;
-
+    border-radius: 20px;
+    border: 1.6px solid lightgrey;
 }
 
 .itemCard>img {
     width: 15rem;
 }
 
+.itemName {
+    font-size: 1.2rem;
+    margin: 20px;
+    text-align: center;
+}
+
 .cardRating {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin: 5px;
 }
 
-h1 {
-    font-size: 1.2rem;
+
+.cardRating>p {
+    margin: 0 5px;
+}
+
+.bottomSection {
+    display: flex;
+    justify-content: space-between;
 }
 
 .sidebarDiv {
-    padding: 3px 20px;
+    padding: 3px 50px 5px 20px;
 }
 
 .sidebarDiv>h1 {
     margin: 20px 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 5%;
+    font-size: 1.3rem;
 }
 
 .sidebarBorder {
@@ -53,7 +71,7 @@ h1 {
 }
 
 button {
-    background-color: var(--dark_green) ;
+    background-color: var(--dark_green);
     font-family: var(--main_font);
     font-size: 1rem;
     color: white;
@@ -62,7 +80,7 @@ button {
     border: none;
     border-radius: 15px;
 }
- 
+
 button:hover {
     opacity: 75%;
     cursor: pointer;
@@ -119,7 +137,7 @@ button:hover {
 /* When the checkbox is checked, add a background */
 .container input:checked~.checkmark {
     background-color: var(--dark_green);
-    border:var(--dark_green) 1.6px solid;
+    border: var(--dark_green) 1.6px solid;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
