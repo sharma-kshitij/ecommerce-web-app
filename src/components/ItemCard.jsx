@@ -1,21 +1,27 @@
-// import Rating from 'react-star-rating-lite'
+import Rating from 'react-star-rating-lite'
 
 const ItemCard = ({ name, price, desc, category, image, rating, rate_count }) => {
     return (
         <div className='itemCard'>
             <img src={image} alt="" />
-            <p>{name}</p>
-            <p className='cardRating'>
-                {/* <Rating
+            <p className='itemName' >{name}</p>
+            <div className='cardRating'>
+                <Rating
                     value={rating}
+                    weight="20"
                     readonly
-                /> */}
-                ({
-                    <p>rate_count</p>
-                })
-            </p>
-            <p>Price : ${price}</p>
-            <button>Add To Cart</button>
+                />
+                {
+                    <p>({rate_count})</p>
+                }
+            </div>
+            <div className="bottomSection">
+                <div className="itemPrice">
+                    <p className='priceTag'>Price</p>
+                    <p>${price}</p>
+                </div>
+                <button className='cardButton'>Add To Cart</button>
+            </div>
         </div>
     )
 }
