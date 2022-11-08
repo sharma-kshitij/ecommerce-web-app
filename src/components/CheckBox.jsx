@@ -8,8 +8,8 @@ export default function CheckBox({category}) {
 
   return (
     <div className="sidebarDiv">
-      <label className="container" >Gardening 
-        <input type="checkbox" onClick={() => { setisChecked(!isChecked) }} checked={isChecked} />
+      <label className="container" >{category} 
+        <input type="checkbox" onClick={() => {setisChecked(!isChecked) }} checked={isChecked} />
           <span className="checkmark"></span>
       </label>
     </div>

@@ -3,7 +3,7 @@ import ItemCard from './ItemCard'
 
 const Catalogue = () => {
     return (
-        <div>
+        <div className='cardFlex'>
             {
                 products.map(product => {
                     return (

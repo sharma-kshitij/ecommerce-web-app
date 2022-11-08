@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 :root {
-    --main_font: 'Comfortaa', cursive;
+    /* --main_font: 'Comfortaa', cursive; */
+    --main_font: 'Quicksand', cursive;
     --dark_green: #47a358;
-    --light_grey: lightgrey;
+    --light_grey: rgb(228, 228, 228);
 }
 
 html {
     font-family: var(--main_font);
+    font-size: 1rem;
+    font-weight: 500;
 }
+
+
+/* ------------------------------------------------------------ */
+
 
 .main_content {
     display: flex;
@@ -20,19 +28,21 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 2rem;
-    padding: 2rem;
+    margin: 1rem;
+    padding: 1rem 2rem;
     max-width: 20rem;
     border-radius: 20px;
-    border: 1.6px solid lightgrey;
+    border: 1.6px solid var(--light_grey);
 }
 
 .itemCard>img {
-    width: 15rem;
+    width: 10rem;
+    height: 10rem;
 }
 
 .itemName {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     margin: 20px;
     text-align: center;
 }
@@ -54,12 +64,10 @@ html {
     justify-content: space-between;
 }
 
-.sidebarDiv {
-    padding: 3px 50px 5px 20px;
-}
 
 .itemPrice {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    font-weight: 500;
     margin: 20px;
 }
 
@@ -77,32 +85,25 @@ html {
     opacity: 100%;
 }
 
-
-.normalDiv {
-    padding: 15px 20px;
+.cardFlex {
+    /* margin-left: 300px; */
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
-.normalDiv>h1 {
-    margin: 20px 10px;
-    margin-top: 20px;
-    padding: 5%;
-    font-size: 1.3rem;
-}
 
-.sidebarBorder {
-    border-left: none;
-    border: solid 1.6px var(--light_grey);
-}
+/* ------------------------------------------------------------ */
+
 
 button {
     background-color: var(--dark_green);
     font-family: var(--main_font);
     font-size: 1rem;
     color: white;
-    padding: 15px 10px;
+    padding: 10px 10px;
     width: 70%;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 button:hover {
@@ -111,8 +112,91 @@ button:hover {
     /* box-shadow: 2px 3px 30px 1px #bdcabf; */
 }
 
+.textInput {
+    margin: 15px 15px;
+    padding: 0 20px;
+    background: none;
+    color: black;
+    border: 1px var(--light_grey) solid;
+}
+
+.textInput:hover {
+    background-color: var(--light_grey);
+    color: white;
+    opacity: 100%;
+}
 
 
+/* ------------------------------------------------------------ */
+
+
+.navbarDiv {
+    display: flex;
+    padding: 20px 30px;
+}
+
+.navbarBorder {
+    border-left: none;
+    border-top: none;
+    border: solid 1.6px var(--light_grey);
+}
+
+/* ------------------------------------------------------------ */
+
+
+.detailsbarDiv {
+    display: flex;
+    padding: 20px 30px;
+}
+
+.detailsbarBorder {
+    border-left: none;
+    border-top: none;
+    border: solid 1.6px var(--light_grey);
+}
+
+/* ------------------------------------------------------------ */
+.sidebarDiv {
+    padding: 3px 20px 5px 15px;
+    margin: 0% ;
+}
+
+.normalDiv {
+    margin: 0%;
+    padding: 0%;
+}
+
+.sidebarDiv>h1 {
+    margin: 20px 20px;
+    margin-top: 20px;
+    /* padding: 5%; */
+    font-size: 1.1rem;
+}
+
+.sidebarBorder {
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border: solid 1.6px var(--light_grey);
+}
+
+hr {
+    border-top: solid 1.6px var(--light_grey);
+    border-bottom: none;
+    size : 1rem;
+    /* color: var(--light_grey); */
+}
+
+.centerDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.fixed {
+    position: fixed;
+}
+
+/* ------------------------------------------------------------ */
 
 
 
@@ -120,9 +204,10 @@ button:hover {
 .container {
     display: block;
     position: relative;
+    width: max-content;
     padding-left: 35px;
-    padding-top: 3px;
-    margin-bottom: 12px;
+    /* padding-top: auto; */
+    margin-bottom: 10px;
     cursor: pointer;
     font-size: 1rem;
     font-family: var(--main_font);

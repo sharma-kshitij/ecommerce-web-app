@@ -2,7 +2,7 @@ import React from 'react'
 
 const DetailsBar = () => {
     return (
-        <div>DetailsBar</div>
+        <div className='detailsbarDiv detailsbarBorder'>DetailsBar</div>
     )
 }
 

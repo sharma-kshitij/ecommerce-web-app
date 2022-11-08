@@ -22,9 +22,9 @@ const ItemCard = ({ name, price, desc, category, image, rating, rate_count }) =>
             <div className="bottomSection">
                 <div className="itemPrice">
                     <p className='priceTag'>Price</p>
-                    <p>${price}</p>
+                    <p><strong>${price}</strong></p>
                 </div>
-                <button className='cardButton'>Add To Cart</button>
+                <button className='cardButton'><strong>Add To Cart</strong></button>
             </div>
         </div>
     )
