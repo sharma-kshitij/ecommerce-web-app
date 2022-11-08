@@ -1,11 +1,12 @@
 import React from 'react'
 import CheckBox from './CheckBox'
 import products from '../products.json'
+import { Rating } from 'react-simple-star-rating';
+import { camelCase } from '../functions/functions';
 
 let existingCategories = [];
 
 products.forEach(element => {
-    console.log(element.category);
     if (!existingCategories.find((a) => {
             return a == element.category
         })) {
@@ -13,15 +14,8 @@ products.forEach(element => {
     }
 });
 
-function camelCase(str) {
-    return str
-        .replace(/\s(.)/g, function (a) {
-            return a.toUpperCase();
-        })
-        .replace(/^(.)/, function (b) {
-            return b.toUpperCase();
-        });
-}
+
+// function 
 
 const Sidebar = () => {
     return (
@@ -35,9 +29,10 @@ const Sidebar = () => {
             <div className='sidebarDiv'>
                 <h1> Categories </h1>
                 {
-                    existingCategories.map(element => {
+                    existingCategories.map(element => {            
+                        console.log("elements are:" ,element);
                         return(<CheckBox category={camelCase(element)}/>)
-                })
+                    })
                 }
             </div>
 
@@ -55,16 +50,29 @@ const Sidebar = () => {
                 />
             </div>  
 
-            <div className='centerDiv'>
+            <div className='centerDiv' style={{marginBottom:30}}>
                 <button> Set Price </button>
             </div>    
             
+            <hr/>
             
-            
+            <div className = 'sidebarDiv'>
+                <h1> Rating </h1> 
+            </div>
 
+            <div className='centerDiv'>
+                <CheckBox />
+                <Rating 
+                    className='sidebarRating'
+                    weight="5"
+                    onClick={(ratedValue) => {console.log(ratedValue)}}
+                />
+            </div>   
+            <hr/>
+            
         </div>
 
     )
 }
 
-export default Sidebar
+export default Sidebar;

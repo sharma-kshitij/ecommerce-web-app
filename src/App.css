@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 :root {
     /* --main_font: 'Comfortaa', cursive; */
@@ -161,6 +160,16 @@ button:hover {
     margin: 0% ;
 }
 
+.sidebarCenterDiv {
+    padding: 10px 0px 0px 20px;
+    margin: 0%;
+}
+
+.sidebarRating {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
 .normalDiv {
     margin: 0%;
     padding: 0%;
@@ -190,6 +199,8 @@ hr {
 .centerDiv {
     display: flex;
     justify-content: center;
+    flex-direction: row;
+    padding: 20; 
 }
 
 .fixed {
