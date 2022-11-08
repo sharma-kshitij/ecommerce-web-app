@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 :root {
     /* --main_font: 'Comfortaa', cursive; */
@@ -158,7 +157,7 @@ button:hover {
 /* ------------------------------------------------------------ */
 .sidebarDiv {
     padding: 3px 20px 5px 15px;
-    margin: 0% ;
+    margin: 0%;
 }
 
 .normalDiv {
@@ -183,7 +182,7 @@ button:hover {
 hr {
     border-top: solid 1.6px var(--light_grey);
     border-bottom: none;
-    size : 1rem;
+    size: 1rem;
     /* color: var(--light_grey); */
 }
 
