@@ -32,6 +32,11 @@ html {
     max-width: 20rem;
     border-radius: 20px;
     border: 1.6px solid var(--light_grey);
+    transition: all 0.15s;
+}
+
+.itemCard:hover {
+    box-shadow: 2px 3px 20px 0px #dfdfdf;
 }
 
 .itemCard>img {
@@ -76,6 +81,7 @@ html {
     background: none;
     color: black;
     border: 1px var(--light_grey) solid;
+    /* transition: background-color 0.1s ease-out 100ms; */
 }
 
 .cardButton:hover {
@@ -103,12 +109,13 @@ button {
     width: 70%;
     border: none;
     border-radius: 10px;
+    transition: all 0.15s  ;
 }
 
 button:hover {
-    opacity: 75%;
+    background-color: #5ac268;
     cursor: pointer;
-    /* box-shadow: 2px 3px 30px 1px #bdcabf; */
+    box-shadow: 0px 0px 15px 0px #b3e6bb;
 }
 
 .textInput {
@@ -117,12 +124,14 @@ button:hover {
     background: none;
     color: black;
     border: 1px var(--light_grey) solid;
+    transition: all 0.15s;
 }
 
 .textInput:hover {
     background-color: var(--light_grey);
     color: white;
     opacity: 100%;
+    box-shadow: inset 3px 2px 2px #dfdfdf;
 }
 
 
@@ -161,7 +170,7 @@ button:hover {
 }
 
 .sidebarCenterDiv {
-    padding: 10px 0px 0px 20px;
+    padding: 0px 0px 0px 0px;
     margin: 0%;
 }
 
@@ -200,7 +209,8 @@ hr {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    padding: 20; 
+    /* padding: 20;  */
+    margin-bottom: 15px;
 }
 
 .fixed {
@@ -209,6 +219,29 @@ hr {
 
 /* ------------------------------------------------------------ */
 
+/* W3 input css */
+
+.w3-input {
+    padding: 10px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 50px;
+    margin: 0px 10px;
+}
+
+.w3-border {
+    border: 1px solid #ccc !important
+}
+
+.w3-round-large {
+    border-radius: 10px
+}
+
+.rowPadding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
 
 /* Customize the label (the container) */
@@ -247,6 +280,7 @@ hr {
     height: 20px;
     width: 20px;
     background-color: none;
+    transition: all 0.15s;
 }
 
 /* On mouse-over, add a grey background color */

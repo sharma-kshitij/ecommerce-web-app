@@ -3,6 +3,7 @@ import CheckBox from './CheckBox'
 import products from '../products.json'
 import Rating from 'react-star-rating-lite'
 import { camelCase } from '../functions/functions';
+import { useState } from "react";
 
 let existingCategories = [];
 
@@ -15,9 +16,11 @@ products.forEach(element => {
 });
 
 
-// function 
-
 const Sidebar = () => {
+
+    const [ratingCheckBox, setratingCheckBox] = useState(false);
+    // const [fetchIsChecked, setfetchIsChecked] = useState(false);
+
     return (
         <div className='normalDiv sidebarBorder'>
             <div className='sidebarDiv '>
@@ -42,11 +45,16 @@ const Sidebar = () => {
                 <h1> Price Range </h1>
             </div>
 
-            <div className='centerDiv'>
+            <div className='centerDiv rowPadding'>
                 <input
                     type='text'
-                    className='textInput'
+                    className='textInput w3-input w3-border w3-round-large'
                     placeholder='Min'
+                />
+                <input
+                    type='text'
+                    className='textInput w3-input w3-border w3-round-large'
+                    placeholder='Max'
                 />
             </div>
 
@@ -61,11 +69,15 @@ const Sidebar = () => {
             </div>
 
             <div className='centerDiv'>
-                <CheckBox />
+                <CheckBox 
+                    onClick={() => {
+                        setratingCheckBox(!ratingCheckBox)
+                        }} 
+                />
                 <Rating
                     className='sidebarRating'
                     weight='20'
-                    readonly
+                    readonly={() => {return ratingCheckBox? false : true}}
                     onClick={(ratedValue) => { console.log(ratedValue) }}
                 />
             </div>
@@ -74,6 +86,6 @@ const Sidebar = () => {
         </div>
 
     )
-}
+};
 
 export default Sidebar;
