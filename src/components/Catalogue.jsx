@@ -1,8 +1,11 @@
 import products from '../products.json'
+import CatalogueSort from './CatalogueSort'
 import ItemCard from './ItemCard'
 
 const Catalogue = () => {
     return (
+        <div>
+        <CatalogueSort />
         <div className='cardFlex'>
             {
                 products.map(product => {
@@ -19,6 +22,7 @@ const Catalogue = () => {
                     )
                 })
             }
+        </div>
         </div>
     )
 }

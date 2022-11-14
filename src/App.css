@@ -4,7 +4,9 @@
     /* --main_font: 'Comfortaa', cursive; */
     --main_font: 'Quicksand', cursive;
     --dark_green: #47a358;
-    --light_grey: rgb(228, 228, 228);
+    --light_grey: rgb(242, 242, 242);
+    --light_grey_darker: rgb(225, 225, 225);
+    --green_glow : #5ac268;
 }
 
 html {
@@ -20,6 +22,7 @@ html {
 .main_content {
     display: flex;
     flex-direction: row;
+    max-width: 100vw;
 }
 
 .itemCard {
@@ -29,8 +32,9 @@ html {
     justify-content: center;
     margin: 1rem;
     padding: 1rem 2rem;
-    max-width: 20rem;
-    border-radius: 20px;
+    max-width: 15rem;
+    min-width: 15rem;
+    border-radius: 30px;
     border: 1.6px solid var(--light_grey);
     transition: all 0.15s;
 }
@@ -80,8 +84,7 @@ html {
     padding: 0 20px;
     background: none;
     color: black;
-    border: 1px var(--light_grey) solid;
-    /* transition: background-color 0.1s ease-out 100ms; */
+    border: 1px var(--light_grey_darker) solid;
 }
 
 .cardButton:hover {
@@ -91,9 +94,10 @@ html {
 }
 
 .cardFlex {
-    /* margin-left: 300px; */
-    display: grid;
-    grid-template-columns: auto auto auto;
+    margin: 0px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
 }
 
 
@@ -108,12 +112,12 @@ button {
     padding: 10px 10px;
     width: 70%;
     border: none;
-    border-radius: 10px;
+    border-radius: 1rem;
     transition: all 0.15s  ;
 }
 
 button:hover {
-    background-color: #5ac268;
+    background-color: var(--green_glow);
     cursor: pointer;
     box-shadow: 0px 0px 15px 0px #b3e6bb;
 }
@@ -129,7 +133,7 @@ button:hover {
 
 .textInput:hover {
     background-color: var(--light_grey);
-    color: white;
+    color: black;
     opacity: 100%;
     box-shadow: inset 3px 2px 2px #dfdfdf;
 }
@@ -141,12 +145,51 @@ button:hover {
 .navbarDiv {
     display: flex;
     padding: 20px 30px;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .navbarBorder {
     border-left: none;
     border-top: none;
     border: solid 1.6px var(--light_grey);
+}
+
+.navbarRight {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbarRight>* {
+    padding: 6px 6px;
+    color: var(--dark_green);
+    border-radius: 50%;
+    transition: all 0.15s;
+}
+
+
+.navbarRight>*:hover:not(p){
+    /* color: darkgreen; */
+    /* filter: drop-shadow(0 0 0.1rem lightgreen); */
+
+    color: white;
+    background-color: var(--green_glow);
+    box-shadow: 0 0 10px 2px #b3e6bb;
+}
+
+.navbarLeft {
+    display: flex;
+}
+
+.logo{
+    color: var(--dark_green);
+    transition: all 0.2s;
+}
+
+.logo:hover {
+    color: linear-gradient(red, yellow);
+    filter: drop-shadow(0 0 0.3rem lightgreen);
 }
 
 /* ------------------------------------------------------------ */
@@ -163,6 +206,10 @@ button:hover {
     border: solid 1.6px var(--light_grey);
 }
 
+.detailsbarHidden {
+    display : none;
+}
+
 /* ------------------------------------------------------------ */
 .sidebarDiv {
     padding: 3px 20px 5px 15px;
@@ -172,6 +219,10 @@ button:hover {
 .sidebarCenterDiv {
     padding: 0px 0px 0px 0px;
     margin: 0%;
+}
+
+.sidebarHidden {
+    display: none;
 }
 
 .sidebarRating {
@@ -228,6 +279,8 @@ hr {
     border-bottom: 1px solid #ccc;
     width: 50px;
     margin: 0px 10px;
+    font-family: var(--main_font);
+    font-size: 0.9rem;
 }
 
 .w3-border {
@@ -235,13 +288,45 @@ hr {
 }
 
 .w3-round-large {
-    border-radius: 10px
+    border-radius: 1rem;
 }
 
 .rowPadding {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.rowMargin {
+    margin: 0px 2%;
+}
+
+.columnMargin {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+/* ------------------------------------------------------------ */
+
+.btn-selected {
+    background-color: var(--green_glow);
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 0px #b3e6bb;
+}
+
+.btn-not-selected {
+    padding: 0 20px;
+    margin: 15px 15px;
+    color: black;
+    border: 1px var(--light_grey_darker) solid;
+    background: none;
+    font-family: var(--main_font);
+    font-size: 1rem;
+    width: 70%;
+    transition: all 0.15s;
+    padding: 10px 10px;
+}
+
+
+/* ------------------------------------------------------------ */
 
 
 /* Customize the label (the container) */
@@ -290,8 +375,9 @@ hr {
 
 /* When the checkbox is checked, add a background */
 .container input:checked~.checkmark {
-    background-color: var(--dark_green);
-    border: var(--dark_green) 1.6px solid;
+    background-color: var(--green_glow);
+    border: var(--green_glow) 1.6px solid;
+    box-shadow: 0px 0px 15px 0px #b3e6bb;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -317,4 +403,5 @@ hr {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+    
 }

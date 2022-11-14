@@ -4,6 +4,7 @@ import products from '../products.json'
 import Rating from 'react-star-rating-lite'
 import { camelCase } from '../functions/functions';
 import { useState } from "react";
+import { useEffect } from "react";
 
 let existingCategories = [];
 
@@ -21,8 +22,29 @@ const Sidebar = () => {
     const [ratingCheckBox, setratingCheckBox] = useState(false);
     // const [fetchIsChecked, setfetchIsChecked] = useState(false);
 
+    const [windowSize, setWindowSize] = useState(getWindowSize());
+
+    useEffect(() => {
+        function handleWindowResize() {
+            setWindowSize(getWindowSize());
+        }
+
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    }, []);
+
+    function getWindowSize() {
+        const { innerWidth, innerHeight } = window;
+            return { innerWidth, innerHeight };
+    }
+
+    // windowSize.innerWidth
+
     return (
-        <div className='normalDiv sidebarBorder'>
+        <div className ={ windowSize.innerWidth < 816 ? 'sidebarHidden' :'normalDiv sidebarBorder'}>
             <div className='sidebarDiv '>
                 <h1>Filter</h1>
             </div>
