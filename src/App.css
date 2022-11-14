@@ -25,6 +25,14 @@ html {
     max-width: 100vw;
 }
 
+
+.cardFlex {
+    margin: 0px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
 .itemCard {
     display: flex;
     flex-direction: column;
@@ -93,12 +101,6 @@ html {
     opacity: 100%;
 }
 
-.cardFlex {
-    margin: 0px 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-}
 
 
 /* ------------------------------------------------------------ */
@@ -138,6 +140,30 @@ button:hover {
     box-shadow: inset 3px 2px 2px #dfdfdf;
 }
 
+/* ------------------------------------------------------------ */
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.searchbar>input {
+    /* position: relative; */
+    padding: 15px;
+    padding-left: 50px;
+    min-width: -webkit-calc(100% - 85px);
+}
+
+.searchbar>*:not(input) {
+    position: absolute;
+    margin-left: 25px;
+    opacity: 60%;
+    transition: all 0.15s;
+}
 
 /* ------------------------------------------------------------ */
 
@@ -156,9 +182,12 @@ button:hover {
     border: solid 1.6px var(--light_grey);
 }
 
+
+
 .navbarRight {
     display: flex;
     justify-content: space-around;
+    max-width: 240px;
 }
 
 .navbarRight>* {
@@ -168,15 +197,28 @@ button:hover {
     transition: all 0.15s;
 }
 
-
 .navbarRight>*:hover:not(p){
     /* color: darkgreen; */
     /* filter: drop-shadow(0 0 0.1rem lightgreen); */
-
+    cursor: pointer;
     color: white;
     background-color: var(--green_glow);
     box-shadow: 0 0 10px 2px #b3e6bb;
 }
+
+
+
+.navbarCenter {
+    display: flex;
+    font-size : 1rem;
+}
+
+.navbarCenter>* {
+    padding: 0 1rem;
+}
+
+
+
 
 .navbarLeft {
     display: flex;
@@ -233,6 +275,7 @@ button:hover {
 .normalDiv {
     margin: 0%;
     padding: 0%;
+    transition: all 0.2ms;
 }
 
 .sidebarDiv>h1 {
@@ -243,10 +286,8 @@ button:hover {
 }
 
 .sidebarBorder {
-    border-left: none;
-    border-top: none;
-    border-bottom: none;
     border: solid 1.6px var(--light_grey);
+    border-top: none;
 }
 
 hr {

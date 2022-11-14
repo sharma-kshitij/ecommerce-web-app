@@ -24,7 +24,7 @@ const DetailsBar = () => {
     }
 
     return (
-        <div className ={ windowSize.innerWidth < 816 ? 'sidebarHidden' :'detailsbarDiv detailsbarBorder'}>DetailsBar</div>
+        <div className ={ windowSize.innerWidth < /*816*/ 100000 ? 'sidebarHidden' :'detailsbarDiv detailsbarBorder'}>DetailsBar</div>
     )
 }
 
