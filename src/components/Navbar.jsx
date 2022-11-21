@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <div className='navbarDiv navbarBorder'>
             <div className='navbarLeft'>
-                <div className='logo'><FaGripfire size={30}/></div>
+                <div className='logo hue-shift'><FaGripfire size={30}/></div>
                 <h1 style={{fontSize : 25}}> Shopify</h1>
                 {/* <BiSearchAlt /> */}
             </div>
