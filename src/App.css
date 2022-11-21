@@ -229,10 +229,19 @@ button:hover {
     transition: all 0.2s;
 }
 
-.logo:hover {
-    color: linear-gradient(red, yellow);
-    filter: drop-shadow(0 0 0.3rem lightgreen);
+.hue-shift {
+    animation: hue-shift 5s infinite alternate;
 }
+
+@keyframes hue-shift {
+    from {
+        filter: hue-rotate(0)
+    }
+
+    to {
+        filter: hue-rotate(360deg)
+    }
+}   
 
 /* ------------------------------------------------------------ */
 
