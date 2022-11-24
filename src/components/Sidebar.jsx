@@ -34,7 +34,9 @@ const Sidebar = () => {
                 {
                     existingCategories.map(element => {
                         console.log("elements are:", element);
-                        return (<CheckBox category={camelCase(element)} />)
+                        return (<CheckBox
+                            key={Date.now()}
+                            category={camelCase(element)} />)
                     })
                 }
             </div>

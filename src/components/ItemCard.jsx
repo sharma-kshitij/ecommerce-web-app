@@ -31,7 +31,10 @@ const ItemCard = ({ name, price, desc, category, image, rating, rate_count }) =>
                 {
                     <p>({rate_count})</p>
                 }
+
+
             </div>
+
             <div className="bottomSection">
                 <div className="itemPrice">
                     <p className='priceTag'>Price</p>
