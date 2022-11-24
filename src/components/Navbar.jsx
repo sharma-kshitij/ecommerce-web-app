@@ -3,14 +3,13 @@ import { FaGripfire } from 'react-icons/fa';
 import { BiShoppingBag } from "react-icons/bi";
 import { BiHeart } from "react-icons/bi";
 import { BiUserCircle } from "react-icons/bi";
-import {BiSearchAlt} from 'react-icons/bi';
 
 const Navbar = () => {
     return (
         <div className='navbarDiv navbarBorder'>
             <div className='navbarLeft'>
-                <div className='logo hue-shift'><FaGripfire size={30}/></div>
-                <h1 style={{fontSize : 25}}> Shopify</h1>
+                <div className='logo hue-shift'><FaGripfire size={30} /></div>
+                <h1 style={{ fontSize: 25 }}> Shopify</h1>
                 {/* <BiSearchAlt /> */}
             </div>
 
@@ -22,11 +21,9 @@ const Navbar = () => {
             </div>
 
             <div className='navbarRight'>
-                <BiShoppingBag size={23}/>
-                <p></p>
-                <BiHeart size={23}/>
-                <p></p>
-                <BiUserCircle size={23}/>
+                <BiShoppingBag size={23} />
+                <BiHeart size={23} />
+                <BiUserCircle size={23} />
             </div>
         </div>
     )

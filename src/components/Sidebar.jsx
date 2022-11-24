@@ -4,47 +4,25 @@ import products from '../products.json'
 import Rating from 'react-star-rating-lite'
 import { camelCase } from '../functions/functions';
 import { useState } from "react";
-import { useEffect } from "react";
 
-let existingCategories = [];
-
-products.forEach(element => {
-    if (!existingCategories.find((a) => {
-        return a == element.category
-    })) {
-        existingCategories.push(element.category);
-    }
-});
 
 
 const Sidebar = () => {
 
-    const [ratingCheckBox, setratingCheckBox] = useState(false);
-    // const [fetchIsChecked, setfetchIsChecked] = useState(false);
+    let existingCategories = [];
 
-    const [windowSize, setWindowSize] = useState(getWindowSize());
-
-    useEffect(() => {
-        function handleWindowResize() {
-            setWindowSize(getWindowSize());
+    products.forEach(element => {
+        if (!existingCategories.find((a) => {
+            return a === element.category
+        })) {
+            existingCategories.push(element.category);
         }
+    });
 
-        window.addEventListener('resize', handleWindowResize);
-
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-        };
-    }, []);
-
-    function getWindowSize() {
-        const { innerWidth, innerHeight } = window;
-            return { innerWidth, innerHeight };
-    }
-
-    // windowSize.innerWidth
+    const [ratingCheckBox, setratingCheckBox] = useState(false);
 
     return (
-        <div className ={ windowSize.innerWidth < 816 ? 'sidebarHidden' :'normalDiv sidebarBorder'}>
+        <div className='normalDiv sidebarBorder'>
             <div className='sidebarDiv '>
                 <h1>Filter</h1>
             </div>
@@ -91,15 +69,15 @@ const Sidebar = () => {
             </div>
 
             <div className='centerDiv'>
-                <CheckBox 
+                <CheckBox
                     onClick={() => {
                         setratingCheckBox(!ratingCheckBox)
-                        }} 
+                    }}
                 />
                 <Rating
                     className='sidebarRating'
                     weight='20'
-                    readonly={() => {return ratingCheckBox? false : true}}
+                    readonly={() => { return ratingCheckBox ? false : true }}
                     onClick={(ratedValue) => { console.log(ratedValue) }}
                 />
             </div>

@@ -1,7 +1,20 @@
-import { AiOutlineHeart } from 'react-icons/ai'
+import { useContext } from 'react'
 import Rating from 'react-star-rating-lite'
+import { GlobalContext } from '../GlobalContext'
+import { ACTIONS } from '../reducer'
 
 const ItemCard = ({ name, price, desc, category, image, rating, rate_count }) => {
+
+    const [state, dispatch] = useContext(GlobalContext)
+
+    const addToCart = () => {
+        dispatch({
+            type: ACTIONS.test,
+            payload: { name, price, desc, category, image, rating, rate_count }
+        })
+        console.log(state)
+    }
+
     return (
         <div className='itemCard'>
 
@@ -24,7 +37,7 @@ const ItemCard = ({ name, price, desc, category, image, rating, rate_count }) =>
                     <p className='priceTag'>Price</p>
                     <p><strong>${price}</strong></p>
                 </div>
-                <button className='cardButton'><strong>Add To Cart</strong></button>
+                <button onClick={() => addToCart()} className='cardButton'>Add To Cart</button>
             </div>
         </div>
     )

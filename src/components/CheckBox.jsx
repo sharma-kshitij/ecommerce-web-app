@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from "react";
-import { CamelCase } from '../functions/functions';
 
 export default function CheckBox(props) {
 
@@ -10,17 +9,17 @@ export default function CheckBox(props) {
 
   return (
     <div className={props.category ? 'sidebarDiv' : 'sidebarCenterDiv'}>
-      <label className="container" >{props.category} 
-        <input 
-          type="checkbox" 
+      <label className="container" >{props.category}
+        <input
+          type="checkbox"
           onClick={
             () => {
-              setisChecked(!isChecked) 
-              }
-            } 
-          checked={isChecked} 
+              setisChecked(!isChecked)
+            }
+          }
+          checked={isChecked}
         />
-          <span className="checkmark"></span>
+        <span className="checkmark"></span>
       </label>
     </div>
   )

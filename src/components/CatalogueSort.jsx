@@ -1,5 +1,4 @@
 import React from 'react';
-import products from '../products.json';
 import SearchBar from './SearchBar';
 
 export default function CatalogueSort() {
@@ -9,8 +8,8 @@ export default function CatalogueSort() {
 
       <SearchBar />
 
-      <div className='centerDiv rowPadding' style={{margin: "0 1rem" /*,maxWidth:"700px"*/}}>
-        <label className='rowMargin columnMargin w3-input' style={{border:"none", whiteSpace:"nowrap"}}>Sort :</label>
+      <div className='centerDiv rowPadding' style={{ margin: "0 1rem" /*,maxWidth:"700px"*/ }}>
+        <label className='rowMargin columnMargin w3-input' style={{ border: "none", whiteSpace: "nowrap" }}>Sort :</label>
         <button className='rowMargin columnMargin btn-selected'>Relevance</button>
         <button className='rowMargin columnMargin'>Popular</button>
         <button className='rowMargin columnMargin'>Latest</button>

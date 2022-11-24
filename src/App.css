@@ -6,7 +6,7 @@
     --dark_green: #47a358;
     --light_grey: rgb(242, 242, 242);
     --light_grey_darker: rgb(225, 225, 225);
-    --green_glow : #5ac268;
+    --green_glow: #5ac268;
 }
 
 html {
@@ -30,7 +30,7 @@ html {
     margin: 0px 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
 }
 
 .itemCard {
@@ -38,22 +38,22 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 1rem;
-    padding: 1rem 2rem;
+    margin: 1rem 0;
+    padding: 1rem;
     max-width: 15rem;
     min-width: 15rem;
-    border-radius: 30px;
+    border-radius: 15px;
     border: 1.6px solid var(--light_grey);
     transition: all 0.15s;
 }
 
 .itemCard:hover {
-    box-shadow: 2px 3px 20px 0px #dfdfdf;
+    border: solid 1.6px;
 }
 
 .itemCard>img {
+    object-fit: cover;
     width: 10rem;
-    height: 10rem;
 }
 
 .itemName {
@@ -115,7 +115,7 @@ button {
     width: 70%;
     border: none;
     border-radius: 1rem;
-    transition: all 0.15s  ;
+    transition: all 0.15s;
 }
 
 button:hover {
@@ -197,20 +197,19 @@ button:hover {
     transition: all 0.15s;
 }
 
-.navbarRight>*:hover:not(p){
+.navbarRight>*:hover {
     /* color: darkgreen; */
     /* filter: drop-shadow(0 0 0.1rem lightgreen); */
     cursor: pointer;
     color: white;
     background-color: var(--green_glow);
-    box-shadow: 0 0 10px 2px #b3e6bb;
 }
 
 
 
 .navbarCenter {
     display: flex;
-    font-size : 1rem;
+    font-size: 1rem;
 }
 
 .navbarCenter>* {
@@ -218,13 +217,15 @@ button:hover {
 }
 
 
-
+.navbarRight>* {
+    padding: 0 0.5rem;
+}
 
 .navbarLeft {
     display: flex;
 }
 
-.logo{
+.logo {
     color: var(--dark_green);
     transition: all 0.2s;
 }
@@ -241,7 +242,7 @@ button:hover {
     to {
         filter: hue-rotate(360deg)
     }
-}   
+}
 
 /* ------------------------------------------------------------ */
 
@@ -258,7 +259,7 @@ button:hover {
 }
 
 .detailsbarHidden {
-    display : none;
+    display: none;
 }
 
 /* ------------------------------------------------------------ */
@@ -354,6 +355,7 @@ hr {
     margin-top: 30px;
     margin-bottom: 0px;
 }
+
 /* ------------------------------------------------------------ */
 
 .btn-selected {
@@ -453,5 +455,11 @@ hr {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-    
+
+}
+
+@media only screen and (max-width: 816px) {
+    .normalDiv {
+        display: none;
+    }
 }
