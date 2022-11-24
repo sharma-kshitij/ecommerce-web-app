@@ -155,7 +155,7 @@ button:hover {
     /* position: relative; */
     padding: 15px;
     padding-left: 50px;
-    min-width: -webkit-calc(100% - 85px);
+    width: 95%;
 }
 
 .searchbar>*:not(input) {
@@ -163,6 +163,10 @@ button:hover {
     margin-left: 25px;
     opacity: 60%;
     transition: all 0.15s;
+}
+
+#test {
+    border: solid 1px;
 }
 
 /* ------------------------------------------------------------ */
