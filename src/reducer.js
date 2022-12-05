@@ -1,6 +1,7 @@
 export const ACTIONS = {
     test: "test",
     ADD_TO_CART: "ADD_TO_CART",
+    CHECKBOX_CLICKED: "CHECKBOX_CLICKED",
 }
 
 export const reducer = (cart, action) => {
@@ -19,8 +20,8 @@ export const reducer = (cart, action) => {
                     }
                 ]
             )
-
-
+            break;
+        
         default:
             return cart
     }

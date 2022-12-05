@@ -1,13 +1,15 @@
-import React from 'react'
-import CheckBox from './CheckBox'
-import products from '../products.json'
-import Rating from 'react-star-rating-lite'
+import React from 'react';
+import CheckBox from './CheckBox';
+import Rating from 'react-star-rating-lite';
 import { camelCase } from '../functions/functions';
-import { useState } from "react";
+import { useState, useContext } from "react";
+import itemListContext from '../App';
+import products from '../products.json'
 
 
+const Sidebar = ({itemListState,updateItemList}) => {
 
-const Sidebar = () => {
+// -----------------FILTERING CATEGORIES------------------
 
     let existingCategories = [];
 
@@ -19,27 +21,42 @@ const Sidebar = () => {
         }
     });
 
+// -------------------COMPONENT STATE--------------------
+
     const [ratingCheckBox, setratingCheckBox] = useState(false);
+    const [ratedValue, setratedValue] = useState(1);
 
     return (
         <div className='normalDiv sidebarBorder'>
+
+    {/* -----------------"FILTER" DIV------------------ */}
             <div className='sidebarDiv '>
                 <h1>Filter</h1>
             </div>
 
             <hr />
+            
+    {/* -------------"CATEGORIES" CHECKBOXES------------ */}
 
             <div className='sidebarDiv'>
                 <h1> Categories </h1>
                 {
                     existingCategories.map(element => {
-                        console.log("elements are:", element);
-                        return (<CheckBox category={camelCase(element)} />)
+                        
+                        return (<CheckBox 
+                            key={existingCategories.indexOf(element)}
+                            category={camelCase(element)}
+                            itemListState={itemListState}
+                            updateItemList={updateItemList}
+                        />)
+
                     })
                 }
             </div>
 
             <hr />
+
+    {/* --------------"PRICE RANGE" INPUTS------------- */}
 
             <div className='sidebarDiv'>
                 <h1> Price Range </h1>
@@ -64,6 +81,8 @@ const Sidebar = () => {
 
             <hr />
 
+    {/* ------------"RATING" STARS & CHECKBOX---------- */}
+
             <div className='sidebarDiv'>
                 <h1> Rating </h1>
             </div>
@@ -78,7 +97,8 @@ const Sidebar = () => {
                     className='sidebarRating'
                     weight='20'
                     readonly={() => { return ratingCheckBox ? false : true }}
-                    onClick={(ratedValue) => { console.log(ratedValue) }}
+                    onChange={(ratedValue) => { console.log(ratedValue) }}
+                    value={ratedValue.toString()}
                 />
             </div>
             <hr />

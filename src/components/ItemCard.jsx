@@ -2,6 +2,9 @@ import { useContext } from 'react'
 import Rating from 'react-star-rating-lite'
 import { GlobalContext } from '../GlobalContext'
 import { ACTIONS } from '../reducer'
+import {stringTruncate} from '../functions/functions.js'
+
+const stringSize=35;
 
 const ItemCard = ({ name, price, desc, category, image, rating, rate_count }) => {
 
@@ -18,13 +21,13 @@ const ItemCard = ({ name, price, desc, category, image, rating, rate_count }) =>
     return (
         <div className='itemCard'>
 
-            {/* <span><AiOutlineHeart color='red' size='2rem' /></span> */}
-
             <img src={image} alt="" />
-            <p className='itemName' >{name}</p>
+            <p className='itemName' title={name} >
+                {stringTruncate(name,stringSize)}
+            </p>
             <div className='cardRating'>
                 <Rating
-                    value={rating}
+                    value={rating.toString()}
                     weight="20"
                     readonly
                 />

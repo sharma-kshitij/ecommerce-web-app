@@ -1,14 +1,19 @@
-import products from '../products.json'
-import CatalogueSort from './CatalogueSort'
-import ItemCard from './ItemCard'
+import { useContext } from 'react';
+import products from '../products.json';
+import CatalogueSort from './CatalogueSort';
+import ItemCard from './ItemCard';
+import itemListContext from '../App'
 
-const Catalogue = () => {
+const Catalogue = (props) => {
+    // const itemList = useContext(itemListContext);
+
+
     return (
         <div>
             <CatalogueSort />
             <div className='cardFlex'>
                 {
-                    products.map(product => {
+                    props.itemList.map(product => {
                         return (
                             <ItemCard
                                 key={product.id}
