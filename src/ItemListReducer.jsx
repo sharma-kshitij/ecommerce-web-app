@@ -10,8 +10,7 @@ export const ACTIONS = {
 
 export const initialItemListState = {
     itemList:products,
-    category:""
-    // category:[]
+    category:["none"],
 }
 
 // -------------REDUCER FUNCTIONS FOR ITEMLIST--------------
@@ -27,7 +26,7 @@ export function itemListReducer (itemListState, action) {
                       itemListState.itemList, 
                       action.payload.category
                       ), 
-                  category: action.payload.category
+                  category: action.payload.category,
                 }
             );
     

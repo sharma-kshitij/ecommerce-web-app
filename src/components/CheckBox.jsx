@@ -6,7 +6,13 @@ import itemListContext from '../App'
 export default function CheckBox(props) {
 
   const [isChecked, setisChecked] = useState(false);
-  // const {itemListState, updateItemList} = useContext(itemListContext);
+
+  // -------------------------------------------------------
+
+  // ! USE CONTEXT NOT WORKING, ENABLE COMMENT BELOW IF YOU CAN MAKE IT WORK
+  // ? const {itemListState, updateItemList} = useContext(itemListContext);
+
+  // -------------------------------------------------------
 
   function checkboxClicked() {
 
@@ -15,20 +21,22 @@ export default function CheckBox(props) {
     console.log("initial categories : ", props.itemListState.category);
 
     const thisCategory = reverseCamelCase(props.category);
+    let categories = [];
 
     if(!isChecked === true) {
-      // props.itemListState.category.push(thisCategory);
+      categories = props.itemListState.category;
+      categories.push(thisCategory);
       props.updateItemList(
-        thisCategory, 
+        categories, 
         props.itemListState
       );
     }
 
     else {
-      // removeItem(props.itemListState.category, thisCategory);
+      categories = props.itemListState.category;
+      removeItem(categories, thisCategory);
       props.updateItemList(
-        // thisCategory, 
-        "",
+        categories, 
         props.itemListState
       );
     }

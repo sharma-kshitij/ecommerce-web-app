@@ -40,19 +40,16 @@ export function filterList(
     
     const newItems= [];
 
-    // if (categories===[]) {
-    if (categories==="") {
+
+    if (categories.length === 1) {
         return initialList;
     } 
     else {
         initialList.forEach(listItem => {
-            if(listItem.category === categories) {
-                newItems.push(listItem)
+            for (let i = 0; i < categories.length; i++) {
+                if(listItem.category === categories[i])
+                    newItems.push(listItem);
             }
-            // for (let i = 0; i < categories.length; i++) {
-            //     if(listItem.category === categories[i])
-            //         newItems.push(listItem);
-            // }
         });
     return newItems;
     }   
@@ -63,12 +60,15 @@ export function filterList(
 export function removeItem(arr, value) {
     var index = arr.indexOf(value);
     if (index > -1) {
-        arr.splice(index, 1);
+        if(arr.length === 1)
+            arr.splice(index,1,"none");
+        else
+            arr.splice(index, 1);
         return arr;
     }
-    if (index === -1 || arr.length===1 ){
-        return [];
+    else if ( arr.length === 1 ){
+        return ["none"];
     }
     
-    return [];
+    return ["none"];
 }
