@@ -7,9 +7,9 @@ import itemListContext from '../App';
 import products from '../products.json'
 
 
-const Sidebar = ({itemListState,updateItemList}) => {
+const Sidebar = ({itemListState,updateItemList,updateListRating}) => {
 
-// -----------------FILTERING CATEGORIES------------------
+// -----------------------FUNCTIONS------------------------
 
     let existingCategories = [];
 
@@ -20,6 +20,12 @@ const Sidebar = ({itemListState,updateItemList}) => {
             existingCategories.push(element.category);
         }
     });
+
+    function ratingHandler(ratedValue) { 
+        console.log(ratedValue);
+        setratedValue(ratedValue);
+        updateListRating(ratedValue);
+    }
 
 // -------------------COMPONENT STATE--------------------
 
@@ -75,7 +81,7 @@ const Sidebar = ({itemListState,updateItemList}) => {
                 />
             </div>
 
-            <div className='centerDiv' style={{ marginBottom: 30 }}>
+            <div className='centerDiv' style={{ marginBottom: 20 }}>
                 <button> Set Price </button>
             </div>
 
@@ -87,20 +93,25 @@ const Sidebar = ({itemListState,updateItemList}) => {
                 <h1> Rating </h1>
             </div>
 
-            <div className='centerDiv'>
+            <div className='centerDiv ratingStars'>
                 <CheckBox
-                    onClick={() => {
-                        setratingCheckBox(!ratingCheckBox)
-                    }}
+                    // onClick={() => {
+                    //     setratingCheckBox(!ratingCheckBox)
+                    // }}
                 />
                 <Rating
                     className='sidebarRating'
                     weight='20'
-                    readonly={() => { return ratingCheckBox ? false : true }}
-                    onChange={(ratedValue) => { console.log(ratedValue) }}
+                    // readonly={() => { return ratingCheckBox ? false : true }}
+                    onClick={ratingHandler}
                     value={ratedValue.toString()}
                 />
             </div>
+
+            <div className='ratingTextDiv'>
+            <p >Products rated more than {ratedValue} stars</p>
+            </div>
+
             <hr />
 
         </div>

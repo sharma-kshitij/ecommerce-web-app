@@ -33,16 +33,17 @@ export function stringTruncate(str, size) {
 
 // ----------------CATEGORY FILTER FUNCTION------------------
 
-export function filterList(
+// ! TODO: MODIFY OPERATIONS SUCH THAT BOTH CAN BE APPLIED SIMULTANIOUSLY
+
+export function filterListByCategory(
     initialList, 
-    itemList, 
+    itemListState,
     categories) {
     
-    const newItems= [];
-
+    let newItems= [];
 
     if (categories.length === 1) {
-        return initialList;
+        newItems = [...initialList];
     } 
     else {
         initialList.forEach(listItem => {
@@ -51,8 +52,34 @@ export function filterList(
                     newItems.push(listItem);
             }
         });
+    }
+
+    // if (itemListState.rating > 1) {
+    //     newItems = [...intersectArray(newItems, itemListState.itemList)];
+    // }
+
     return newItems;
-    }   
+}
+
+// ----------------RATING FILTER FUNCTION------------------
+
+export function filterListByRating(
+    initialList, 
+    itemListState, 
+    rating) {
+    
+    let newItems= [];
+    
+    initialList.forEach(listItem => {
+        if(listItem.rating.rate >= rating)
+            newItems.push(listItem);
+    });
+
+    // if(itemListState.category.length > 1) {
+    //     newItems = [...intersectArray(newItems, itemListState.itemList)];
+    // }
+
+    return newItems;
 }
 
 // ----------------REMOVE ONCE FROM ARRAY-----------------
@@ -66,9 +93,16 @@ export function removeItem(arr, value) {
             arr.splice(index, 1);
         return arr;
     }
-    else if ( arr.length === 1 ){
+    else {
         return ["none"];
     }
+}
+
+// ---------------INTERSECTION OF ARRAYS----------------
+
+export function intersectArray(array1, array2) {
     
-    return ["none"];
+    const intersectedArray = array1.filter(value => array2.includes(value));
+    return intersectedArray;
+
 }

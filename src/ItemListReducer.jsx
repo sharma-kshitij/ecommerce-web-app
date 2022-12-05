@@ -1,16 +1,18 @@
 import products from './products.json';
-import {filterList} from './functions/functions';
+import { filterListByCategory, filterListByRating } from './functions/functions';
 import React, { useReducer, useState } from 'react';
 
 // ----------------STATE & ACTIONS FOR REDUCER----------------
 
 export const ACTIONS = {
     TOGGLE_CATEGORY : "toogle-category",
+    TOOGLE_RATING: "toogle-rating"
 }
 
 export const initialItemListState = {
-    itemList:products,
-    category:["none"],
+    itemList : products,
+    category : ["none"],
+    rating : 1
 }
 
 // -------------REDUCER FUNCTIONS FOR ITEMLIST--------------
@@ -21,14 +23,28 @@ export function itemListReducer (itemListState, action) {
         case ACTIONS.TOGGLE_CATEGORY:
             return(
                 {
-                  itemList: filterList(
+                  itemList: filterListByCategory(
                       initialItemListState.itemList,
-                      itemListState.itemList, 
+                      itemListState, 
                       action.payload.category
                       ), 
                   category: action.payload.category,
+                  rating: itemListState.rating
                 }
             );
+
+        case ACTIONS.TOGGLE_RATING:
+            return(
+                {
+                    itemList: filterListByRating(
+                        initialItemListState.itemList,
+                        itemListState,
+                        action.payload.rating
+                    ),
+                    category: itemListState.category,
+                    rating: action.payload.rating,
+                }
+            )
     
         default:
             return itemListState;

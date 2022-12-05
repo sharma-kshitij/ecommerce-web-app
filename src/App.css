@@ -16,7 +16,7 @@ html {
 }
 
 
-/* ------------------------------------------------------------ */
+/* --------------------CATALOGUE--------------------- */
 
 
 .main_content {
@@ -116,7 +116,7 @@ html {
 
 
 
-/* ------------------------------------------------------------ */
+/* --------------BUTTONS & TEXT INPUTS----------------- */
 
 
 button {
@@ -153,7 +153,7 @@ button:hover {
     box-shadow: inset 3px 2px 2px #dfdfdf;
 }
 
-/* ------------------------------------------------------------ */
+/* ---------------------SEARCHBAR------------------------ */
 
 .searchbar {
     display: flex;
@@ -179,7 +179,7 @@ button:hover {
 }
 
 
-/* ------------------------------------------------------------ */
+/* ----------------------NAVBAR------------------------- */
 
 
 .navbarDiv {
@@ -258,7 +258,7 @@ button:hover {
     }
 }
 
-/* ------------------------------------------------------------ */
+/* --------------------DETAILSBAR------------------------ */
 
 
 .detailsbarDiv {
@@ -276,7 +276,7 @@ button:hover {
     display: none;
 }
 
-/* ------------------------------------------------------------ */
+/* ----------------------SIDEBAR---------------------- */
 .sidebarDiv {
     padding: 3px 20px 5px 15px;
     margin: 0%;
@@ -303,7 +303,7 @@ button:hover {
 }
 
 .sidebarDiv>h1 {
-    margin: 20px 20px;
+    margin: 15px 20px;
     margin-top: 20px;
     /* padding: 5%; */
     font-size: 1.1rem;
@@ -333,7 +333,20 @@ hr {
     position: fixed;
 }
 
-/* ------------------------------------------------------------ */
+.ratingStars {
+    margin-bottom: 0.2rem;
+}
+
+.ratingTextDiv {
+    display: flex;
+    padding: 0.2rem 1rem;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.7rem;
+    margin-bottom: 15px;
+}
+
+/* ----------------W3 INPUT CSS (IMPORTED)-------------- */
 
 /* W3 input css */
 
@@ -370,7 +383,7 @@ hr {
     margin-bottom: 0px;
 }
 
-/* ------------------------------------------------------------ */
+/* ------------------GREEN BUTTON CSS------------------- */
 
 .btn-selected {
     background-color: var(--green_glow);
@@ -392,7 +405,7 @@ hr {
 }
 
 
-/* ------------------------------------------------------------ */
+/* -------------CHECKBOX CSS (IMPORTED)---------------- */
 
 
 /* Customize the label (the container) */

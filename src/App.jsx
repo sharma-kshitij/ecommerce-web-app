@@ -21,13 +21,22 @@ export default function App() {
         });
     }
 
+    function updateListRating(rating) {
+        dispatch({
+        type : ACTIONS.TOGGLE_RATING,
+        payload : {itemList :itemListState.itemList, rating : rating}
+        });
+    }
+
     return (
             <div className="App">
                 <Navbar />
                 <div className="main_content">
                 <itemListContext.Provider 
                     value={{itemListState, updateItemList}}>
-                    <Sidebar itemListState={itemListState} updateItemList={updateItemList}/>
+                    <Sidebar itemListState={itemListState} updateItemList={updateItemList}
+                            updateListRating={updateListRating}
+                    />
                     <Catalogue itemList={itemListState.itemList} />
                 </itemListContext.Provider>
                     <DetailsBar />
