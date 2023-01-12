@@ -20,7 +20,7 @@ export function reverseCamelCase(str) {
         });
 }
 
-// ----------------STRING TRUNCATE FUNCTION------------------
+// --------------STRING TRUNCATE FUNCTION----------------
 
 export function stringTruncate(str, size) {
     return (
@@ -31,7 +31,7 @@ export function stringTruncate(str, size) {
 }
 
 
-// ----------------CATEGORY FILTER FUNCTION------------------
+// ---------------CATEGORY FILTER FUNCTION---------------
 
 // ! TODO: MODIFY OPERATIONS SUCH THAT BOTH CAN BE APPLIED SIMULTANIOUSLY
 

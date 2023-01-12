@@ -4,7 +4,7 @@
     /* --main_font: 'Comfortaa', cursive; */
     --main_font: 'Quicksand', cursive;
     --dark_green: #47a358;
-    --light_grey: rgb(242, 242, 242);
+    --light_grey: rgb(233, 233, 233);
     --light_grey_darker: rgb(225, 225, 225);
     --green_glow: #5ac268;
 }
@@ -15,6 +15,10 @@ html {
     font-weight: 500;
 }
 
+/* body {
+    transform: scale(0.9);
+    transform-origin: 0% 0%;
+} */
 
 /* --------------------CATALOGUE--------------------- */
 
@@ -27,10 +31,17 @@ html {
 
 
 .cardFlex {
+    width: 98.5%;
+    /* !Enable this for scrollable catalogue */
+    /* height: 75.8vh; */
+    /* height: 67.5vh;
+    overflow-x: hidden;
+    overflow-y: auto;     */
     margin: 0px 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    /* transition: all 0.2s; */
 }
 
 .itemCard {
@@ -39,27 +50,30 @@ html {
     align-items: center;
     justify-content:space-evenly;
     margin: 1rem 0.5rem;
-    padding: 3rem 1rem;
+    padding: 1.5rem 1rem;
     max-width: 15rem;
     min-width: 15rem;
     border-radius: 15px;
     border: 1.6px solid var(--light_grey);
-    transition: all 0.15s;
+    transition: all 0.2s;
+    
 }
 
 .itemCard:hover {
-    box-shadow: 0px 0px 15px 2px var(--light_grey);
-    transform: scale(1.03);
-}
-
-.itemCardClicked {
-    transform: scaleX(1.5) scaleY(1.2);
+    box-shadow: 0px 0px 30px 0px var(--light_grey);
+    transform: scale(1.02);
+    border-color: white;
 }
 
 .itemCard>img {
     /* object-fit: cover; */
     width: 10rem;
     height: 10rem;
+    border-radius: 20px;
+}
+
+.itemCard>img:hover {
+    cursor: pointer;
 }
 
 .itemName {
@@ -82,7 +96,6 @@ html {
     align-items: center;
     margin: 5px;
 }
-
 
 .cardRating>p {
     margin: 0 5px;
@@ -114,7 +127,20 @@ html {
     opacity: 100%;
 }
 
+.catalogue{
+    margin: "0 1rem";
+}
 
+.catalogueLabel{
+    border: none;
+    white-space: nowrap;
+}
+
+/* ------------CATALOGUE HEADER------------ */
+
+.catalogueHeader{
+    width: 100%;
+}
 
 /* --------------BUTTONS & TEXT INPUTS----------------- */
 
@@ -153,6 +179,10 @@ button:hover {
     box-shadow: inset 3px 2px 2px #dfdfdf;
 }
 
+.textInput:focus {
+    border:none;
+}
+
 /* ---------------------SEARCHBAR------------------------ */
 
 .searchbar {
@@ -161,7 +191,7 @@ button:hover {
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 30px;
-    margin-bottom: 0px;
+    /* margin-bottom: 10px; */
 }
 
 .searchbar>input {
@@ -297,6 +327,10 @@ button:hover {
 }
 
 .normalDiv {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    
     margin: 0%;
     padding: 0%;
     transition: all 0.2ms;
@@ -379,8 +413,8 @@ hr {
 }
 
 .columnMargin {
-    margin-top: 30px;
-    margin-bottom: 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /* ------------------GREEN BUTTON CSS------------------- */

@@ -5,14 +5,14 @@ import React, { useReducer, useState } from 'react';
 // ----------------STATE & ACTIONS FOR REDUCER----------------
 
 export const ACTIONS = {
-    TOGGLE_CATEGORY : "toogle-category",
-    TOOGLE_RATING: "toogle-rating"
+    TOGGLE_CATEGORY : "toggle-category",
+    TOOGLE_RATING: "toggle-rating"
 }
 
 export const initialItemListState = {
     itemList : products,
     category : ["none"],
-    rating : 1
+    rating : 0
 }
 
 // -------------REDUCER FUNCTIONS FOR ITEMLIST--------------

@@ -3,7 +3,7 @@ import Catalogue from './components/Catalogue';
 import DetailsBar from './components/DetailsBar';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import {ACTIONS, initialItemListState, itemListReducer} from './ItemListReducer'
+import {ACTIONS, initialItemListState, itemListReducer} from './ItemListReducer';
 import './App.css';
 
 // ----------------------APP COMPONENT-----------------------

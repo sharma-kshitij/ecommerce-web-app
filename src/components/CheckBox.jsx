@@ -2,17 +2,16 @@ import React, { useState, useReducer ,useContext } from "react";
 import { reverseCamelCase, removeItem } from '../functions/functions';
 import itemListContext from '../App'
 
-
 export default function CheckBox(props) {
 
   const [isChecked, setisChecked] = useState(false);
 
-  // -------------------------------------------------------
+  // ------------------------------------------------------
 
   // ! USE CONTEXT NOT WORKING, ENABLE COMMENT BELOW IF YOU CAN MAKE IT WORK
   // ? const {itemListState, updateItemList} = useContext(itemListContext);
 
-  // -------------------------------------------------------
+  // ------------------------------------------------------
 
   function checkboxClicked() {
 

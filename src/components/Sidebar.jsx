@@ -30,7 +30,7 @@ const Sidebar = ({itemListState,updateItemList,updateListRating}) => {
 // -------------------COMPONENT STATE--------------------
 
     const [ratingCheckBox, setratingCheckBox] = useState(false);
-    const [ratedValue, setratedValue] = useState(1);
+    const [ratedValue, setratedValue] = useState(0);
 
     return (
         <div className='normalDiv sidebarBorder'>

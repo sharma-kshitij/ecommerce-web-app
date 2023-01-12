@@ -4,18 +4,20 @@ import SearchBar from './SearchBar';
 export default function CatalogueSort() {
   return (
     //Todo: remove all css classes and make custom class
-    <div>
+    <div className='catalogueHeader'>
 
       <SearchBar />
 
-      <div className='centerDiv rowPadding' style={{ margin: "0 1rem" /*,maxWidth:"700px"*/ }}>
-        <label className='rowMargin columnMargin w3-input' style={{ border: "none", whiteSpace: "nowrap" }}>Sort :</label>
+      <div className='centerDiv rowPadding catalogue' style={{margin:0}}>
+        <label className='catalogueLabel rowMargin columnMargin w3-input'>Sort :</label>
         <button className='rowMargin columnMargin btn-selected'>Relevance</button>
         <button className='rowMargin columnMargin'>Popular</button>
         <button className='rowMargin columnMargin'>Latest</button>
         <button className='rowMargin columnMargin'>Latest</button>
-
       </div>
+
+      {/* to enable div, disable .searchbar->margin-bottom in css */}
+      {/* also set .cardflex-> height: 67.5vh in css */}
     </div>
   )
 }
